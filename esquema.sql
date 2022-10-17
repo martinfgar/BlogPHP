@@ -12,7 +12,7 @@ create table user(
     /*en rol 0=edito, 1=admin*/
 );
 
-create table posts(
+create table post(
 	id int not null auto_increment primary key,
 	title varchar(255),
 	brief varchar(511),
@@ -21,9 +21,10 @@ create table posts(
 	created_at datetime,
 	status int default 1,
     user_id int,
-	foreign key (user_id) references user(id));
+	foreign key (user_id) references user(id)
+);
 
-create table comments(
+create table comment(
 	id int not null auto_increment primary key,
 	name varchar(255),
 	comment varchar(255),
