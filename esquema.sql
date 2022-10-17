@@ -20,6 +20,7 @@ create table posts(
 	image varchar(255),
 	created_at datetime,
 	status int default 1,
+    user_id int,
 	foreign key (user_id) references user(id));
 
 create table comments(
@@ -28,5 +29,6 @@ create table comments(
 	comment varchar(255),
 	created_at datetime,
 	status int default 1,
+    post_id int,
 	foreign key (post_id) references post(id)
 );
