@@ -19,17 +19,21 @@ class Usuario extends Model{
     
    /**
     * Devuelve un array con objetos Usuario
+
     * @param array $fields [fieldname1, fieldname2,...] default * 
     * @param array $filter [campo=>valor]
    */
     public static function get($fields = ['*'],$filter = [1=>1]){
+
         $conn = Self::getConexion();
         $tabla = self::$tabla;
         array_walk($filter, function (&$val, $key) {
             $val = "{$key}='{$val}'";
         });
+
         array_push($fields,'id');
         $query = "select ".implode(', ',$fields)." from {$tabla} where ".implode('and ',$filter);
+
         $resultado = $conn->query($query);
         $usuarios = [];
         // mostrar resultado

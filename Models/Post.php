@@ -21,6 +21,7 @@ class Post extends Model
 
     /**
      * Devuelve un array con objetos Post
+
      * @param array $fields [fieldname1, fieldname2,...] default * 
      * @param array $filter [campo=>valor]
      */
@@ -33,6 +34,7 @@ class Post extends Model
         });
         array_push($fields,'id');
         $query = "select ".implode(', ',$fields)." from {$tabla} where ".implode('and ',$filter);
+
         $resultado = $conn->query($query);
         $posts = [];
         // mostrar resultado
@@ -41,6 +43,7 @@ class Post extends Model
             foreach ($row as $campo=>$valor){
                 $post->$campo = $valor;
             }
+
             $posts[]  = $post;
         }
         $resultado->close();
