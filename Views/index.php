@@ -1,3 +1,6 @@
+<?php
+    namespace App\Views;
+?>
 <!DOCTYPE HTML>
 
 <html>
@@ -18,35 +21,35 @@
 
     <title>Inicio</title>
 
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="Views/images/favicon.ico" type="image/x-icon">
 
 
 
     <!-- style -->
 
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="Views/css/style.css" rel="stylesheet" type="text/css">
 
     <!-- style -->
 
     <!-- bootstrap -->
 
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="Views/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
     <!-- responsive -->
 
-    <link href="css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="Views/css/responsive.css" rel="stylesheet" type="text/css">
 
     <!-- font-awesome -->
 
-    <link href="css/fonts.css" rel="stylesheet" type="text/css">
+    <link href="Views/css/fonts.css" rel="stylesheet" type="text/css">
 
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="Views/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- font-awesome -->
 
-    <link href="css/effects/normalize.css" rel="stylesheet" type="text/css">
+    <link href="Views/css/effects/normalize.css" rel="stylesheet" type="text/css">
 
-    <link href="css/effects/component.css" rel="stylesheet" type="text/css">
+    <link href="Views/css/effects/component.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -66,12 +69,12 @@
         <div style="display: flex;">
             <h1>
 
-                <a href="index.html" title="avana LLC"><img src="images/logo.png" title="avana LLC"
+                <a href="/home" title="avana LLC"><img src="Views/images/logo.png" title="avana LLC"
                         alt="avana LLC" /></a>
 
             </h1>
             <!-- logo -->
-            <a href="Login/index.html" style="margin-left: auto;"><img src="images/person.svg" alt=""></a>
+            <a href="/login" style="margin-left: auto;"><img src="Views/images/person.svg" alt=""></a>
         </div>
     </header>
 
@@ -117,7 +120,7 @@
 
                                     </div>
 
-                                    <img src="images/blog-images/blog-2.jpg" alt="" class="img-responsive" />
+                                    <img src="Views/images/blog-images/blog-2.jpg" alt="" class="img-responsive" />
 
                                 </figure>
 
@@ -147,7 +150,7 @@
 
                                     </div>
 
-                                    <img src="images/blog-images/blog-4.jpg" alt="" class="img-responsive" />
+                                    <img src="Views/images/blog-images/blog-4.jpg" alt="" class="img-responsive" />
 
                                 </figure>
 
@@ -177,7 +180,7 @@
 
                                     </div>
 
-                                    <img src="images/blog-images/blog-2.jpg" alt="" class="img-responsive" />
+                                    <img src="Views/images/blog-images/blog-2.jpg" alt="" class="img-responsive" />
 
                                 </figure>
 
@@ -207,7 +210,7 @@
 
                                     </div>
 
-                                    <img src="images/blog-images/blog-4.jpg" alt="" class="img-responsive" />
+                                    <img src="Views/images/blog-images/blog-4.jpg" alt="" class="img-responsive" />
 
                                 </figure>
 
@@ -237,7 +240,7 @@
 
                                     </div>
 
-                                    <img src="images/blog-images/blog-2.jpg" alt="" class="img-responsive" />
+                                    <img src="Views/images/blog-images/blog-2.jpg" alt="" class="img-responsive" />
 
                                 </figure>
 
@@ -277,7 +280,7 @@
 
                                     </div>
 
-                                    <img src="images/blog-images/blog-1.jpg" alt="" class="img-responsive" />
+                                    <img src="Views/images/blog-images/blog-1.jpg" alt="" class="img-responsive" />
 
                                 </figure>
 
@@ -307,7 +310,7 @@
 
                                     </div>
 
-                                    <img src="images/blog-images/blog-3.jpg" alt="" class="img-responsive" />
+                                    <img src="Views/images/blog-images/blog-3.jpg" alt="" class="img-responsive" />
 
                                 </figure>
 
@@ -337,7 +340,7 @@
 
                                     </div>
 
-                                    <img src="images/blog-images/blog-5.jpg" alt="" class="img-responsive" />
+                                    <img src="Views/images/blog-images/blog-5.jpg" alt="" class="img-responsive" />
 
                                 </figure>
 
@@ -367,7 +370,7 @@
 
                                     </div>
 
-                                    <img src="images/blog-images/blog-1.jpg" alt="" class="img-responsive" />
+                                    <img src="Views/images/blog-images/blog-1.jpg" alt="" class="img-responsive" />
 
                                 </figure>
 
@@ -397,7 +400,7 @@
 
                                     </div>
 
-                                    <img src="images/blog-images/blog-3.jpg" alt="" class="img-responsive" />
+                                    <img src="Views/images/blog-images/blog-3.jpg" alt="" class="img-responsive" />
 
                                 </figure>
 
@@ -427,7 +430,7 @@
 
                                     </div>
 
-                                    <img src="images/blog-images/blog-5.jpg" alt="" class="img-responsive" />
+                                    <img src="Views/images/blog-images/blog-5.jpg" alt="" class="img-responsive" />
 
                                 </figure>
 
@@ -473,7 +476,7 @@
 
         <h1>
 
-            <a href="index.html" title="avana LLC"><img src="images/logo.png" title="avana LLC" alt="avana LLC" /></a>
+            <a href="/home" title="avana LLC"><img src="Views/images/logo.png" title="avana LLC" alt="avana LLC" /></a>
 
         </h1>
 
@@ -503,31 +506,31 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 
-    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="Views/js/jquery.min.js" type="text/javascript"></script>
 
     <!-- custom -->
 
-    <script src="js/nav.js" type="text/javascript"></script>
+    <script src="Views/js/nav.js" type="text/javascript"></script>
 
-    <script src="js/custom.js" type="text/javascript"></script>
+    <script src="Views/js/custom.js" type="text/javascript"></script>
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 
-    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="Views/js/bootstrap.min.js" type="text/javascript"></script>
 
-    <script src="js/effects/masonry.pkgd.min.js" type="text/javascript"></script>
+    <script src="Views/js/effects/masonry.pkgd.min.js" type="text/javascript"></script>
 
-    <script src="js/effects/imagesloaded.js" type="text/javascript"></script>
+    <script src="Views/js/effects/imagesloaded.js" type="text/javascript"></script>
 
-    <script src="js/effects/classie.js" type="text/javascript"></script>
+    <script src="Views/js/effects/classie.js" type="text/javascript"></script>
 
-    <script src="js/effects/AnimOnScroll.js" type="text/javascript"></script>
+    <script src="Views/js/effects/AnimOnScroll.js" type="text/javascript"></script>
 
-    <script src="js/effects/modernizr.custom.js"></script>
+    <script src="Views/js/effects/modernizr.custom.js"></script>
 
     <!-- jquery.countdown -->
 
-    <script src="js/html5shiv.js" type="text/javascript"></script>
+    <script src="Views/js/html5shiv.js" type="text/javascript"></script>
 
 </body>
 
