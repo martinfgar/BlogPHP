@@ -19,30 +19,25 @@ class Usuario extends Model{
     
    /**
     * Devuelve un array con objetos Usuario
+    * @param array $fields [fieldname1, fieldname2,...] default * 
     * @param array $filter [campo=>valor]
    */
-    public static function get($filter = [1=>1]){
+    public static function get($fields = ['*'],$filter = [1=>1]){
         $conn = Self::getConexion();
         $tabla = self::$tabla;
         array_walk($filter, function (&$val, $key) {
             $val = "{$key}='{$val}'";
         });
-        $query = "select * from {$tabla} where ".implode('and ',$filter);
+        array_push($fields,'id');
+        $query = "select ".implode(', ',$fields)." from {$tabla} where ".implode('and ',$filter);
         $resultado = $conn->query($query);
         $usuarios = [];
         // mostrar resultado
         while ($row = $resultado->fetch_assoc()) {
            $user = new Usuario();
-           $user->id         = $row['id'];
-           $user->username   = $row['username'];
-           $user->password   = $row['password'];
-           $user->email      = $row['email'];
-           $user->created_at = $row['created_at'];
-           $user->last_login = $row['last_login'];
-           $user->active     = $row['active'];
-           $user->first_name = $row['first_name'];
-           $user->last_name  = $row['last_name'];
-           $user->rol        = $row['rol']; 
+           foreach ($row as $campo=>$valor){
+                $user->$campo = $valor;
+           }
            $usuarios[]  = $user;
         }
         $resultado->close();
