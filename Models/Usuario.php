@@ -19,11 +19,15 @@ class Usuario extends Model{
     
    /**
     * Devuelve un array con objetos Usuario
+    * @param $filter Array con estructura campo => valor
    */
-    public static function get(){
+    public static function get($filter = [1=>1]){
         $conn = Self::getConexion();
         $tabla = self::$tabla;
-        $query = "select * from {$tabla}";
+        array_walk($filter, function (&$val, $key) {
+            $val = "{$key}='{$val}'";
+        });
+        $query = "select * from {$tabla} where ".implode('and ',$filter);
         $resultado = $conn->query($query);
         $usuarios = [];
         // mostrar resultado
