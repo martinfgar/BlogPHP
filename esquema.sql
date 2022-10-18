@@ -1,7 +1,7 @@
 create table user(
    id int not null auto_increment primary key,
-    usename varchar(20),
-    password varchar(20),
+    username varchar(20),
+    password varchar(200),
     email varchar(30),
     created_at datetime,
     last_login datetime,
