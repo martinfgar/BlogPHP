@@ -21,31 +21,29 @@ class Post extends Model
 
     /**
      * Devuelve un array con objetos Post
-     * @param $filter Array con estructura campo => valor
+
+     * @param array $fields [fieldname1, fieldname2,...] default * 
+     * @param array $filter [campo=>valor]
      */
-    public static function get($filter = [1=>1])
+    public static function get($fields = ['*'],$filter = [1=>1])
     {
         $conn = Self::getConexion();
         $tabla = self::$tabla;
         array_walk($filter, function (&$val, $key) {
             $val = "{$key}='{$val}'";
         });
-        
-        $query = "select * from {$tabla} where ".implode('and ',$filter);
+        array_push($fields,'id');
+        $query = "select ".implode(', ',$fields)." from {$tabla} where ".implode('and ',$filter);
+
         $resultado = $conn->query($query);
         $posts = [];
         // mostrar resultado
         while ($row = $resultado->fetch_assoc()) {
             $post = new Post();
-            $post->id         = $row['id'];
-            $post->title      = $row['title'];
-            $post->brief      = $row['brief'];
-            $post->content    = $row['content'];
-            $post->image      = $row['image'];
-            $post->created_at = $row['created_at'];
-            $post->status     = $row['status'];
-            $post->user_id    = $row['user_id'];
-            $post->last_name  = $row['last_name'];
+            foreach ($row as $campo=>$valor){
+                $post->$campo = $valor;
+            }
+
             $posts[]  = $post;
         }
         $resultado->close();
