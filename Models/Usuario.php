@@ -1,12 +1,12 @@
 <?php
 namespace App\Models;
+include 'Model.php';
 
-use DateTime;
 
 class Usuario extends Model{
 
     private static string $tabla = 'user';
-    public int $id;
+    public static ?int $id = null;
     public string $username;
     public string $password;
     public string $email;
@@ -17,8 +17,8 @@ class Usuario extends Model{
     public string $last_name;
     public int $rol;
     
-   /*
-    Funcion para obtener los usuarios de la base de datos
+   /**
+    * Devuelve un array con objetos Usuario
    */
     public static function get(){
         $conn = Self::getConexion();
@@ -45,16 +45,24 @@ class Usuario extends Model{
         return $usuarios;
     }
 
-     /*
-        Funcion para crear y editar
-    */
-    public function Save(){
+     /**
+        * Llamar a esta función cuando se quiera actualizar o guardar.
+        * Intenta actualizar si el usuario tiene id. Si no intenta introducir uno nuevo.
+      */
+    public function save(){
         $conn = Self::getConexion();
         $tabla = self::$tabla;
-        $query = "insert into {$tabla} values (".implode(',',get_object_vars($this)).") on duplicate key update password=?, name=?";
-        $stmt = $conn->prepare($query); 
-        $stmt->bind_param("sssss", $this->username,$this->password,$this->name,$this->password,$this->name);
-        $stmt->execute();
+        $arrayAttr = get_object_vars($this);
+        $id = self::$id;
+        if($id){
+            array_walk($arrayAttr,function (&$val,$key){$val = "{$key}='{$val}'";});
+            $values = implode(', ',$arrayAttr);
+            $query = "update {$tabla} set {$values} where id={$id}";
+            echo $query;
+        }else{
+            $query = "insert into {$tabla} (".(implode(', ',array_keys($arrayAttr))).") values (".implode(',',array_map(function($val){return "'{$val}'";},array_values($arrayAttr))).")";
+        }
+        $stmt = $conn->query($query); 
         $stmt->close();
     }
 }
