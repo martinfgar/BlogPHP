@@ -21,7 +21,7 @@ class Post extends Model
 
     /**
      * Devuelve un array con objetos Post
-     * @param $filter Array con estructura campo => valor
+     * @param array $filter [campo=>valor]
      */
     public static function get($filter = [1=>1])
     {
