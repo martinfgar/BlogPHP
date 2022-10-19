@@ -1,6 +1,9 @@
 <?php
 namespace App;
-
+require 'Models/Post.php';
+//require 'Models/Usuario.php';
+use App\Models\Post;
+use App\Models\Usuario;
 $routes = [];
 
 function route($path, $callback)
@@ -10,10 +13,12 @@ function route($path, $callback)
 }
 route('/',function(){
     //Cargar datos de los posts con imagen, fecha, id y titulo 
+    $posts = Post::get();
     require 'Views/index.php';
 });
 route('/home',function(){ 
-    //Cargar datos de los posts con imagen, fecha, id y titulo 
+    //Cargar datos de los posts con imagen, fecha, id y titulo
+    $posts = Post::get(); 
     require 'Views/index.php';
 });
 
