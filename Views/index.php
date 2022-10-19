@@ -52,19 +52,9 @@
     <link href="Views/css/effects/component.css" rel="stylesheet" type="text/css">
 
 </head>
-
-
-
 <body>
-
-
-
     <!-- header -->
-
     <header role="header" class="container">
-
-
-
         <!-- logo -->
         <div style="display: flex;">
             <h1>
@@ -78,18 +68,8 @@
         </div>
     </header>
 
-    <!-- header -->
-
-    <!-- main -->
-
     <main role="main-inner-wrapper" class="container">
-
-
-
         <div class="row">
-
-
-
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
 
                 <article role="pge-title-content" class="blog-header">
@@ -107,23 +87,23 @@
                 <ul class="grid-lod effect-2" id="grid">
 
                    <?php 
-                    for($i=0;$i<4;$i++){
-                     require 'postCard.php';
+                    for ($i=0;$i<count($posts)/2;$i++){
+                        $post = $posts[$i];
+                        require 'postCard.php';
                     }
+                    
                    ?>
                 </ul>
-
             </div>
-
-
 
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 
                 <ul class="grid-lod effect-2" id="grid">
 
                 <?php 
-                    for($i=0;$i<4;$i++){
-                     require 'postCard.php';
+                    for ($i=count($posts)/2;$i<count($posts);$i++){
+                        $post = $posts[$i];
+                        require 'postCard.php';
                     }
                    ?>
 

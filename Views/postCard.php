@@ -2,14 +2,14 @@
 
 <section class="blog-content">
 
-    <a href="blog-details.html">
+    <a href='<?php echo "/blog?id=$post->id" ?>'>
 
         <figure>
 
             <div class="post-date">
 
                                
-                <span><?php $post->created_at ?> </span> July 2016
+                <span><?php $post->created_at ?> </span>
 
             </div>
 
@@ -20,10 +20,7 @@
     </a>
 
     <article>
-
         <?php echo $post->title ?>
-        This is a sample news post title content or sample post heading.
-
     </article>
 
 </section>

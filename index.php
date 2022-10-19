@@ -9,11 +9,11 @@ function route($path, $callback)
     $routes[$path] = $callback;
 }
 route('/',function(){
-    //Cargar datos de los posts
+    //Cargar datos de los posts con imagen, fecha, id y titulo 
     require 'Views/index.php';
 });
 route('/home',function(){ 
-    //Cargar datos de los posts para las miniaturas
+    //Cargar datos de los posts con imagen, fecha, id y titulo 
     require 'Views/index.php';
 });
 
