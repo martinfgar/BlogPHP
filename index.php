@@ -9,14 +9,22 @@ function route($path, $callback)
     $routes[$path] = $callback;
 }
 route('/',function(){
+    //Cargar datos de los posts
     require 'Views/index.php';
 });
-route('/home',function(){   
+route('/home',function(){ 
+    //Cargar datos de los posts para las miniaturas
     require 'Views/index.php';
 });
 
 route('/login', function(){
-    header('Location: Views/Login/index.html');
+    require 'Views/login.php';
+});
+
+route('/blog', function(){
+    //comprobar por get el post a mostrar
+    //Cargar el post entero
+    require 'Views/blog-details.php';
 });
 function run()
 {

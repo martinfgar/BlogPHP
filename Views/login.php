@@ -9,7 +9,7 @@
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="Views/css/login.css">
 
 	</head>
 	<body>
@@ -55,10 +55,10 @@
 		</div>
 	</section>
 
-	<script src="js/jquery.min.js"></script>
-  <script src="js/popper.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/main.js"></script>
+	<script src="Views/js/jquery.min.js"></script>
+  <script src="Views/js/popper.js"></script>
+  <script src="Views/js/bootstrap.min.js"></script>
+  <script src="Views/js/main.js"></script>
 
 	</body>
 </html>

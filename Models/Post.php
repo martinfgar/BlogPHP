@@ -69,6 +69,7 @@ class Post extends Model
             $query = "update {$tabla} set {$values} where id={$id}";
             echo $query;
         } else {
+            $this->created_at = date('Y-m-d H:i:s');
             $query = "insert into {$tabla} (" . (implode(', ', array_keys($arrayAttr))) . ") values (" . implode(',', array_map(function ($val) {
                 return "'{$val}'";
             }, array_values($arrayAttr))) . ")";
