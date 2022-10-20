@@ -18,35 +18,35 @@
 
     <title>Posts</title>
 
-    <link rel="shortcut icon" href="Views/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="Static/images/favicon.ico" type="image/x-icon">
 
 
 
     <!-- style -->
 
-    <link href="Views/css/style.css" rel="stylesheet" type="text/css">
+    <link href="Static/css/style.css" rel="stylesheet" type="text/css">
 
     <!-- style -->
 
     <!-- bootstrap -->
 
-    <link href="Views/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="Static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
     <!-- responsive -->
 
-    <link href="Views/css/responsive.css" rel="stylesheet" type="text/css">
+    <link href="Static/css/responsive.css" rel="stylesheet" type="text/css">
 
     <!-- font-awesome -->
 
-    <link href="Views/css/fonts.css" rel="stylesheet" type="text/css">
+    <link href="Static/css/fonts.css" rel="stylesheet" type="text/css">
 
-    <link href="Views/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="Static/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- font-awesome -->
 
-    <link href="Views/css/effects/normalize.css" rel="stylesheet" type="text/css">
+    <link href="Static/css/effects/normalize.css" rel="stylesheet" type="text/css">
 
-    <link href="Views/css/effects/component.css" rel="stylesheet" type="text/css">
+    <link href="Static/css/effects/component.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -64,12 +64,12 @@
         <div style="display: flex;">
             <h1>
 
-                <a href="/home" title="avana LLC"><img src="Views/images/logo.png" title="avana LLC"
+                <a href="/home" title="avana LLC"><img src="Static/images/logo.png" title="avana LLC"
                         alt="avana LLC" /></a>
 
             </h1>
             <!-- logo -->
-            <a href="/login" style="margin-left: auto;"><img src="Views/images/person.svg" alt=""></a>
+            <a href="/login" style="margin-left: auto;"><img src="Static/images/person.svg" alt=""></a>
         </div>
     </header>
 
@@ -98,7 +98,7 @@
 
                 <figure>
 
-                    <img src="Views/images/blog-images/blog-details-image.jpg" alt="" class="img-responsive" />
+                    <img src="Static/images/blog-images/blog-details-image.jpg" alt="" class="img-responsive" />
 
                 </figure>
 
@@ -250,7 +250,7 @@
 
         <h1>
 
-            <a href="/home" title="avana LLC"><img src="Views/images/logo.png" title="avana LLC" alt="avana LLC" /></a>
+            <a href="/home" title="avana LLC"><img src="Static/images/logo.png" title="avana LLC" alt="avana LLC" /></a>
 
         </h1>
 
@@ -292,31 +292,31 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 
-    <script src="Views/js/jquery.min.js" type="text/javascript"></script>
+    <script src="Static/js/jquery.min.js" type="text/javascript"></script>
 
     <!-- custom -->
 
-    <script src="Views/js/nav.js" type="text/javascript"></script>
+    <script src="Static/js/nav.js" type="text/javascript"></script>
 
-    <script src="Views/js/custom.js" type="text/javascript"></script>
+    <script src="Static/js/custom.js" type="text/javascript"></script>
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
 
-    <script src="Views/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="Static/js/bootstrap.min.js" type="text/javascript"></script>
 
-    <script src="Views/js/effects/masonry.pkgd.min.js" type="text/javascript"></script>
+    <script src="Static/js/effects/masonry.pkgd.min.js" type="text/javascript"></script>
 
-    <script src="Views/js/effects/imagesloaded.js" type="text/javascript"></script>
+    <script src="Static/js/effects/imagesloaded.js" type="text/javascript"></script>
 
-    <script src="Views/js/effects/classie.js" type="text/javascript"></script>
+    <script src="Static/js/effects/classie.js" type="text/javascript"></script>
 
-    <script src="Views/js/effects/AnimOnScroll.js" type="text/javascript"></script>
+    <script src="Static/js/effects/AnimOnScroll.js" type="text/javascript"></script>
 
-    <script src="Views/js/effects/modernizr.custom.js"></script>
+    <script src="Static/js/effects/modernizr.custom.js"></script>
 
     <!-- jquery.countdown -->
 
-    <script src="Views/js/html5shiv.js" type="text/javascript"></script>
+    <script src="Static/js/html5shiv.js" type="text/javascript"></script>
 
 </body>
 

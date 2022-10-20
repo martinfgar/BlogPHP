@@ -1,0 +1,7 @@
+# Edita los datos de este fichero para adaptarlos
+# Y renombralo a .env
+DB_HOSTNAME=127.0.0.1
+DB_NAME=blog
+DB_USER=root
+DB_PASSWORD=root
+DB_PORT=3306

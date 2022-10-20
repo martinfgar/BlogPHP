@@ -9,11 +9,11 @@
             <div class="post-date">
 
                                
-                <span><?php $post->created_at ?> </span>
+                <span><?php echo $post->created_at ?> </span>
 
             </div>
 
-            <img src='<?php echo "data:image/png;base64,$post->image" ?>' alt="" class="img-responsive" />
+            <img src='/Static/images/posts/<?php echo "$post->image" ?>' alt="" class="img-responsive" />
 
         </figure>
 
