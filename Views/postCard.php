@@ -8,12 +8,12 @@
 
             <div class="post-date">
 
-                               
-                <span><?php echo $post->created_at ?> </span>
+            <?php echo date("F",strtotime($post->created_at)) ?>       
+            <span><?php echo date("d",strtotime($post->created_at)) ?> </span>
 
             </div>
 
-            <img src='/Static/images/posts/<?php echo "$post->image" ?>' alt="" class="img-responsive" />
+            <img src='/images/posts/<?php echo "$post->image" ?>' alt="" class="img-responsive" />
 
         </figure>
 

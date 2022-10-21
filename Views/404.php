@@ -70,45 +70,22 @@
 
     <main role="main-inner-wrapper" class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
+            <div class="col-12 ">
 
-                <article role="pge-title-content" class="blog-header">
+                <article role="pge-title-content" class="blog-header text-center">
 
                     <header>
 
-                        <h2><span>News</span> Updates from studio</h2>
+                        <h2><span>404</span>Page not found</h2>
 
                     </header>
 
-                    <p>Get all information about our studio from latest news posts & updates page.</p>
+                    <p><a href="/home">Go back home</a></p>
 
                 </article>
 
-                <ul class="grid-lod effect-2" id="grid">
-
-                   <?php 
-                    for ($i=0;$i<count($posts)/2;$i++){
-                        $post = $posts[$i];
-                        require '../Views/postCard.php';
-                    }
-                    
-                   ?>
-                </ul>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-
-                <ul class="grid-lod effect-2" id="grid">
-
-                <?php 
-                    for ($i=count($posts)/2;$i<count($posts);$i++){
-                        $post = $posts[$i];
-                        require '../Views/postCard.php';
-                    }
-                   ?>
-
-                </ul>
-
+                
+              
             </div>
 
 

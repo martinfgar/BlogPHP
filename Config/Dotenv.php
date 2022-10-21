@@ -1,7 +1,7 @@
 <?php
-namespace App;
+namespace App\Config;
 
-class Config
+class Dotenv
 {
     /**
      * The directory where the .env file can be located.

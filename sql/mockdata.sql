@@ -108,3 +108,79 @@ Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan fe
 Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.
 
 Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.', '10.jpg', '2022-10-06 04:01:33', 0, 14);
+
+
+insert into comment (id, name, comment, created_at, status, post_id) values (1, 'Link Livingston', 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
+
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', '2021-12-06 04:58:20', 0, 5);
+insert into comment (id, name, comment, created_at, status, post_id) values (2, 'Newton Pentecust', 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
+
+Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.', '2022-01-22 18:06:24', 0, 3);
+insert into comment (id, name, comment, created_at, status, post_id) values (3, 'Manon Everil', 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.', '2021-11-05 20:23:16', 1, 5);
+insert into comment (id, name, comment, created_at, status, post_id) values (4, 'Richmound Tate', 'Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.
+
+Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', '2022-05-25 14:47:23', 1, 7);
+insert into comment (id, name, comment, created_at, status, post_id) values (5, 'Shaine Cosley', 'Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.', '2022-05-31 16:27:45', 0, 7);
+insert into comment (id, name, comment, created_at, status, post_id) values (6, 'Caroline Guillou', 'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
+
+Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
+
+Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.', '2022-08-22 01:22:53', 0, 10);
+insert into comment (id, name, comment, created_at, status, post_id) values (7, 'Kylen Swigger', 'Phasellus in felis. Donec semper sapien a libero. Nam dui.
+
+Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.', '2022-05-30 12:16:58', 1, 4);
+insert into comment (id, name, comment, created_at, status, post_id) values (8, 'Benn Titchen', 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
+
+Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', '2021-12-11 23:43:30', 1, 2);
+insert into comment (id, name, comment, created_at, status, post_id) values (9, 'Margery Mein', 'In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.', '2022-01-04 02:12:07', 1, 9);
+insert into comment (id, name, comment, created_at, status, post_id) values (10, 'Erich Kopfer', 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.', '2022-08-23 02:12:44', 0, 1);
+insert into comment (id, name, comment, created_at, status, post_id) values (11, 'Stanfield Barrell', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.', '2022-07-14 14:11:41', 0, 3);
+insert into comment (id, name, comment, created_at, status, post_id) values (12, 'Claudian Gilmour', 'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.', '2022-03-19 00:41:30', 1, 2);
+insert into comment (id, name, comment, created_at, status, post_id) values (13, 'Natty Bourdel', 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.', '2021-11-15 20:17:57', 1, 3);
+insert into comment (id, name, comment, created_at, status, post_id) values (14, 'Gardener Graddell', 'Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.', '2022-05-18 20:37:28', 1, 8);
+insert into comment (id, name, comment, created_at, status, post_id) values (15, 'Christen Clayton', 'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.
+
+Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.
+
+Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.', '2022-06-12 20:09:44', 0, 9);
+insert into comment (id, name, comment, created_at, status, post_id) values (16, 'Vivienne Hilldrup', 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.
+
+In congue. Etiam justo. Etiam pretium iaculis justo.', '2022-10-10 09:26:42', 1, 9);
+insert into comment (id, name, comment, created_at, status, post_id) values (17, 'Esta Hovenden', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.
+
+Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.
+
+Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.', '2022-06-15 20:50:11', 1, 10);
+insert into comment (id, name, comment, created_at, status, post_id) values (18, 'Yale Handley', 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.
+
+Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.
+
+Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.', '2022-03-25 13:09:09', 1, 9);
+insert into comment (id, name, comment, created_at, status, post_id) values (19, 'Conn Whitefoot', 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.
+
+Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.', '2022-01-25 16:58:17', 0, 9);
+insert into comment (id, name, comment, created_at, status, post_id) values (20, 'Annabelle Zmitrovich', 'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.
+
+Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.
+
+Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.', '2022-09-09 20:17:16', 1, 4);
+insert into comment (id, name, comment, created_at, status, post_id) values (21, 'Aldwin Baudic', 'Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.', '2022-07-19 17:08:50', 0, 1);
+insert into comment (id, name, comment, created_at, status, post_id) values (22, 'Carver Esposito', 'Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.', '2022-05-16 08:22:59', 1, 10);
+insert into comment (id, name, comment, created_at, status, post_id) values (23, 'Afton Redgate', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.', '2021-12-01 13:27:08', 1, 10);
+insert into comment (id, name, comment, created_at, status, post_id) values (24, 'Foss Wale', 'Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.
+
+Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', '2022-06-30 04:05:13', 0, 7);
+insert into comment (id, name, comment, created_at, status, post_id) values (25, 'Katuscha Bellanger', 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.', '2022-01-30 22:13:08', 0, 10);
+insert into comment (id, name, comment, created_at, status, post_id) values (26, 'Aguste Yeudall', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.
+
+Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.', '2022-04-20 11:51:48', 1, 8);
+insert into comment (id, name, comment, created_at, status, post_id) values (27, 'Salem Hoyt', 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', '2021-12-16 09:27:37', 1, 8);
+insert into comment (id, name, comment, created_at, status, post_id) values (28, 'Hillary Delafont', 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.', '2022-01-13 04:21:08', 1, 8);
+insert into comment (id, name, comment, created_at, status, post_id) values (29, 'Sheeree Sokill', 'In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.
+
+Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.
+
+Sed ante. Vivamus tortor. Duis mattis egestas metus.', '2022-09-02 21:00:13', 0, 9);
+insert into comment (id, name, comment, created_at, status, post_id) values (30, 'Iver Drohan', 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
+
+Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.', '2022-07-25 16:06:54', 1, 3);

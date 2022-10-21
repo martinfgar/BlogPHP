@@ -29,7 +29,7 @@ create table post(
 create table comment(
 	id int not null auto_increment primary key,
 	name varchar(255),
-	comment varchar(255),
+	comment text,
 	created_at datetime,
 	status int default 1,
     post_id int,
