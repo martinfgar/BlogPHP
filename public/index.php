@@ -6,61 +6,49 @@ require '../Models/Usuario.php';
 require '../Models/Post.php';
 require '../Config/Dotenv.php';
 require '../Config/Database.php';
+require '../Controllers/PostController.php';
+require '../Controllers/HomeController.php';
+require '../Controllers/UserController.php';
 
 
-
-
-use App\Models\Post;
 use App\Config\Dotenv;
+use App\Controllers\HomeController;
+use App\Controllers\PostController;
 
 (new Dotenv('../.env'))->load();
 $routes = [];
 $getParams = [];
-$postParams = [];
+$postParams = $_POST;
 function route($path, $callback)
 {
     global $routes;
     $routes[$path] = $callback;
 }
-route('/',function(){
-    //Cargar datos de los posts con imagen, fecha, id y titulo 
-    $posts = Post::get();
-    require '../Views/index.php';
-});
-route('/home',function(){ 
-    //Cargar datos de los posts con imagen, fecha, id y titulo
-    $posts = Post::get(); 
-    require '../Views/index.php';
-});
+route('/',$fn = fn() => HomeController::index());
+route('/index',$fn = fn() => HomeController::index());
+route('/home',$fn = fn() => HomeController::index());
+route('/comment', $fn = fn() => PostController::createComment($GLOBALS['postParams']));
 
 route('/login', function(){
     require '../Views/login.php';
 });
 
-route('/blog', function(){
-    //comprobar por get el post a mostrar
-    global $getParams;
-    $id_blog =  $getParams['id'];
-    $post = Post::get(['*'],['id'=> $id_blog])[0];
-    $comments = $post->comments();
-    $author = $post->author();
-    //Cargar el post entero
-    require '../Views/blog-details.php';
-});
+route('/blog', $fn= fn() =>PostController::get($GLOBALS['getParams']['id']));
+
 function run()
 {   
-    global $routes;
     
-    echo $_POST['name'];
+    global $routes;
     $uri = $_SERVER['REQUEST_URI'] ?? '/';
     $params = explode('?',$uri);
     $uri =  array_shift($params);
     if (count($params)>0){
-        global $getParams;
-        $getParams = [];
         foreach($params as $param){
-            $getParams[explode('=',$param)[0]] = explode('=',$param)[1];
+            $GLOBALS['getParams'][explode('=',$param)[0]] = explode('=',$param)[1];
         }
+    }
+    if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+        $uri = '/'.$_POST['item'];
     }
     foreach ($routes as $path => $callback){
         if ($path !== $uri) continue;
