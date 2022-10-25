@@ -17,11 +17,11 @@ use App\Config\Dotenv;
 use App\Controllers\HomeController;
 use App\Controllers\LoginController;
 use App\Controllers\PostController;
-
 (new Dotenv('../.env'))->load();
 $routes = [];
 $getParams = [];
 $postParams = $_POST;
+$files = $_FILES;
 function route($path, $callback)
 {
     global $routes;
@@ -35,7 +35,7 @@ route('/login', $fn = fn() => LoginController::index());
 route('/newpost', $fn = fn() => PostController::getPostForm());
 route('/blog', $fn= fn() =>PostController::get($GLOBALS['getParams']['id']));
 route('/userlogin', $fn = fn() => LoginController::checkUser($GLOBALS['postParams']));
-route('/post', $fn = fn() => PostController::createPost($GLOBALS['postParams']));
+route('/post', $fn = fn() => PostController::createPost($GLOBALS['postParams'], $GLOBALS['files']));
 route('/logout' ,$fn = fn() => LoginController::logout());
 function run()
 {   

@@ -22,14 +22,26 @@ class PostController{
         require '../Views/postform.php';
     }
 
-    public static function createPost($data){
+    public static function createPost($data,$image){
         $post = new Post();
         $post->title = $data['title'];
         $post->brief = $data['brief'];
         $post->content = $data['content'];
         $post->user_id = $_SESSION['user'];
+        
+        
+        $filename = str_replace(" ","-",$post->title).basename("".$image['image']['name']);
+       
+        
+        if(move_uploaded_file($image['image']['tmp_name'][0],"images/posts/{$filename}")){
+            $post->image = $filename;
+        }
         $post->save();
-
+        header('Location: /home');
+        die();
+        
+        
+        
     }
 
     public static function createComment($data){

@@ -63,7 +63,7 @@ namespace App\Views;
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 commentys-form">
 
-                <form action="index.php" method="POST">
+                <form action="index.php" method="POST"  enctype="multipart/form-data">
                     <div class="clearfix"></div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <label for="title">Title</label>
