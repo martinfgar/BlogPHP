@@ -2,7 +2,7 @@ create database blog;
 GO
 create table user(
    id int not null auto_increment primary key,
-    username varchar(20),
+    username varchar(20) unique,
     password varchar(200),
     email varchar(30),
     created_at datetime DEFAULT CURRENT_TIMESTAMP,

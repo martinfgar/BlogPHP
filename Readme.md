@@ -9,3 +9,5 @@
 </Directory>
 ```
 - Configurar y renombrar el fichero .example a .env
+
+Todos los usuarios de prueba creados por blog.sql tienen de contraseña 'root'.

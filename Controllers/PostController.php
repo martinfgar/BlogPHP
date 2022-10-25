@@ -14,7 +14,21 @@ class PostController{
         require '../Views/blog-details.php';
     }
 
-    public function createPost(){
+    public static function getPostForm(){
+        if (!isset($_SESSION['user'])){
+            header('Location: /login');
+            die();
+        }
+        require '../Views/postform.php';
+    }
+
+    public static function createPost($data){
+        $post = new Post();
+        $post->title = $data['title'];
+        $post->brief = $data['brief'];
+        $post->content = $data['content'];
+        $post->user_id = $_SESSION['user'];
+        $post->save();
 
     }
 
@@ -25,6 +39,8 @@ class PostController{
         $comentario->comment = $data['comment'];
         $comentario->status = 1;
         $comentario->save();
+        header("Location: /blog?id={$data['post_id']}");
+        die();
     }
 
 }

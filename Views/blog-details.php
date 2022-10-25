@@ -56,22 +56,7 @@
 
 
 
-    <header role="header" class="container">
-
-
-
-        <!-- logo -->
-        <div style="display: flex;">
-            <h1>
-
-                <a href="/home" title="avana LLC"><img src="images/logo.png" title="avana LLC" alt="avana LLC" /></a>
-
-            </h1>
-            <!-- logo -->
-            <a href="/login" style="margin-left: auto;"><img src="images/person.svg" alt=""></a>
-        </div>
-    </header>
-
+    <?php  include '../Views/partials/header.php' ?>
 
     <!-- main -->
 
@@ -99,7 +84,7 @@
 
                 <figure>
 
-                    <img src="images/blog-images/blog-details-image.jpg" alt="" class="img-responsive" />
+                    <img src="images/posts/<?php echo $post->image?>" alt="" class="img-responsive" />
 
                 </figure>
 
@@ -131,7 +116,7 @@
                 <ul class="comments-reply">
                     <?php
                     foreach ($comments as $comment) {
-                        include '../Views/comment.php';
+                        include '../Views/partials/comment.php';
                     }
                     ?>
 
@@ -161,15 +146,12 @@
 
                             <div class="col-12 text-center m-3">
                                 <input id="item" name="item" value="comment" hidden>
-                                <button class="btn btn-danger" type="submit">Post Comment</button>
+                                <button class="btn btn-danger form-control" type="submit">Post Comment</button>
                             </div>
 
                         </form>
-
                     </div>
-
                 </div>
-
             </div>
         </div>
 

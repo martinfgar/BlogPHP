@@ -1,5 +1,6 @@
 <?php
-    namespace App\Views;
+
+namespace App\Views;
 ?>
 <!DOCTYPE HTML>
 
@@ -19,7 +20,7 @@
 
 
 
-    <title>Inicio</title>
+    <title>Post Creation</title>
 
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 
@@ -52,51 +53,43 @@
     <link href="css/effects/component.css" rel="stylesheet" type="text/css">
 
 </head>
+
 <body>
     <!-- header -->
-    <?php  include '../Views/partials/header.php' ?>
-    
+    <?php include '../Views/partials/header.php' ?>
+
 
     <main role="main-inner-wrapper" class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 commentys-form">
 
-                <article role="pge-title-content" class="blog-header">
-
-                    <header>
-
-                        <h2><span>News</span> Updates from studio</h2>
-
-                    </header>
-
-                    <p>Get all information about our studio from latest news posts & updates page.</p>
-
-                </article>
-
-                <ul class="grid-lod effect-2" id="grid">
-
-                   <?php 
-                    for ($i=0;$i<count($posts)/2;$i++){
-                        $post = $posts[$i];
-                        require '../Views/partials/postCard.php';
-                    }
+                <form action="index.php" method="POST">
+                    <div class="clearfix"></div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <label for="title">Title</label>
+                        <input type="text" name="title" id="title" placeholder="Whats your post about?" required>
+                    </div>
                     
-                   ?>
-                </ul>
-            </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <label for="brief">Brief</label>
+                        <textarea name="brief" cols="" rows="" placeholder="" required></textarea>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <label for="content">Content</label>
+                        <textarea name="content" cols="" rows="" placeholder="" required></textarea>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <label for="image" class="form-label" >Image</label>
+                        <input type="file" class="form-control" accept="image/png, image/jpeg" name="image" id="image" hidden required>
+                    </div>
 
-                <ul class="grid-lod effect-2" id="grid">
+                    <div class="col-12 text-center">
+                        <input id="item" name="item" value="post" hidden>
+                        <button class="btn btn-danger form-control" type="submit">Publish Post</button>
+                    </div>
 
-                <?php 
-                    for ($i=count($posts)/2;$i<count($posts);$i++){
-                        $post = $posts[$i];
-                        require '../Views/partials/postCard.php';
-                    }
-                   ?>
-
-                </ul>
+                </form>
 
             </div>
 

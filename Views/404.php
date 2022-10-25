@@ -54,19 +54,7 @@
 </head>
 <body>
     <!-- header -->
-    <header role="header" class="container">
-        <!-- logo -->
-        <div style="display: flex;">
-            <h1>
-
-                <a href="/home" title="avana LLC"><img src="images/logo.png" title="avana LLC"
-                        alt="avana LLC" /></a>
-
-            </h1>
-            <!-- logo -->
-            <a href="/login" style="margin-left: auto;"><img src="images/person.svg" alt=""></a>
-        </div>
-    </header>
+    <?php  include '../Views/partials/header.php' ?>
 
     <main role="main-inner-wrapper" class="container">
         <div class="row">

@@ -1,4 +1,5 @@
 <?php
+
 namespace App;
 require '../Models/Model.php';
 require '../Models/Comment.php';
@@ -9,10 +10,12 @@ require '../Config/Database.php';
 require '../Controllers/PostController.php';
 require '../Controllers/HomeController.php';
 require '../Controllers/UserController.php';
-
+require '../Controllers/LoginController.php';
+session_start();
 
 use App\Config\Dotenv;
 use App\Controllers\HomeController;
+use App\Controllers\LoginController;
 use App\Controllers\PostController;
 
 (new Dotenv('../.env'))->load();
@@ -28,13 +31,12 @@ route('/',$fn = fn() => HomeController::index());
 route('/index',$fn = fn() => HomeController::index());
 route('/home',$fn = fn() => HomeController::index());
 route('/comment', $fn = fn() => PostController::createComment($GLOBALS['postParams']));
-
-route('/login', function(){
-    require '../Views/login.php';
-});
-
+route('/login', $fn = fn() => LoginController::index());
+route('/newpost', $fn = fn() => PostController::getPostForm());
 route('/blog', $fn= fn() =>PostController::get($GLOBALS['getParams']['id']));
-
+route('/userlogin', $fn = fn() => LoginController::checkUser($GLOBALS['postParams']));
+route('/post', $fn = fn() => PostController::createPost($GLOBALS['postParams']));
+route('/logout' ,$fn = fn() => LoginController::logout());
 function run()
 {   
     
