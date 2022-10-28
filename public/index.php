@@ -36,6 +36,7 @@ route('/newpost', $fn = fn() => PostController::getPostForm());
 route('/blog', $fn= fn() =>PostController::get($GLOBALS['getParams']['id']));
 route('/userlogin', $fn = fn() => LoginController::checkUser($GLOBALS['postParams']));
 route('/post', $fn = fn() => PostController::createPost($GLOBALS['postParams'], $GLOBALS['files']));
+route('/edit', $fn= fn() => PostController::getPostEditForm($GLOBALS['getParams']['id']));
 route('/logout' ,$fn = fn() => LoginController::logout());
 function run()
 {   

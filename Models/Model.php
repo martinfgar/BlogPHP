@@ -48,8 +48,8 @@ abstract class Model
         $class = get_called_class();
         $tabla = $class::$tabla;
         $arrayAttr = get_object_vars($this);
-        
-        $id = self::$id;
+
+        $id = $this->id;
         if ($id) {
             array_walk($arrayAttr, function (&$val, $key) {
                 $val = "{$key}='{$val}'";

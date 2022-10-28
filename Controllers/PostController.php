@@ -23,6 +23,15 @@ class PostController{
         }
         require '../Views/postform.php';
     }
+    public static function getPostEditForm($id){
+        if (!isset($_SESSION['user'])){
+            header('Location: /login');
+            die();
+        }
+        $post = Post::get(['*'],['id' => $id])[0];
+        echo var_dump($post);
+        require '../Views/postform.php';
+    }
 
     public static function createPost($data,$image){
         $post = new Post();
@@ -30,6 +39,9 @@ class PostController{
         $post->brief = $data['brief'];
         $post->content = $data['content'];
         $post->user_id = $_SESSION['user'];
+        if($data['id']){
+            $post->id = $data['id'];
+        }
         $conn = Database::getConexion();
         $post->image = mysqli_real_escape_string($conn,file_get_contents($image['image']['tmp_name']));
         $conn->close();
