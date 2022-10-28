@@ -48,14 +48,15 @@ abstract class Model
         $class = get_called_class();
         $tabla = $class::$tabla;
         $arrayAttr = get_object_vars($this);
+        
         $id = self::$id;
         if ($id) {
             array_walk($arrayAttr, function (&$val, $key) {
                 $val = "{$key}='{$val}'";
+                
             });
             $values = implode(', ', $arrayAttr);
             $query = "update {$tabla} set {$values} where id={$id}";
-            echo $query;
         } else {
             $query = "insert into {$tabla} (" . (implode(', ', array_keys($arrayAttr))) . ") values (" . implode(',', array_map(function ($val) {
                 return "'{$val}'";

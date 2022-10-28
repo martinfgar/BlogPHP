@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Controllers;
+
+use App\Config\Database;
 use App\Models\Post;
 use App\Models\Comment;
 class PostController{
@@ -28,7 +30,9 @@ class PostController{
         $post->brief = $data['brief'];
         $post->content = $data['content'];
         $post->user_id = $_SESSION['user'];
-        $post->image = file_get_contents($image['image']['tmp_name']);
+        $conn = Database::getConexion();
+        $post->image = mysqli_real_escape_string($conn,file_get_contents($image['image']['tmp_name']));
+        $conn->close();
         $post->save();
         header('Location: /home');
         die();
