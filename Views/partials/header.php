@@ -10,7 +10,12 @@
             <!-- logo -->
             <?php 
                 if(isset($_SESSION['user'])){
-                    include '../Views/partials/header/logged.php';
+                    if($sameAuthor){
+                        include '../Views/partials/header/postAuthor.php';
+                    }else{
+                        include '../Views/partials/header/logged.php';
+                    }
+                    
                 }else{
                   include '../Views/partials/header/visitor.php';
                 }

@@ -29,7 +29,6 @@ class PostController{
             die();
         }
         $post = Post::get(['*'],['id' => $id])[0];
-        echo var_dump($post);
         require '../Views/postform.php';
     }
 

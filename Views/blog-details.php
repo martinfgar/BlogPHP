@@ -54,7 +54,9 @@
 
 <body>
 
-
+    <?php if (isset($_SESSION['user'])){
+        $sameAuthor = $_SESSION['user'] == $post->user_id;
+    } ?>
 
     <?php  include '../Views/partials/header.php' ?>
 
