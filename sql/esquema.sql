@@ -19,7 +19,7 @@ create table post(
 	title varchar(255),
 	brief varchar(511),
 	content text,
-	image text,
+	image longblob,
 	created_at datetime DEFAULT CURRENT_TIMESTAMP,
 	status int default 1,
     user_id int,
