@@ -28,14 +28,7 @@ class PostController{
         $post->brief = $data['brief'];
         $post->content = $data['content'];
         $post->user_id = $_SESSION['user'];
-        
-        
-        $filename = str_replace(" ","-",$post->title).basename("".$image['image']['name']);
-       
-        
-        if(move_uploaded_file($image['image']['tmp_name'][0],"images/posts/{$filename}")){
-            $post->image = $filename;
-        }
+        $post->image = file_get_contents($image['image']['tmp_name']);
         $post->save();
         header('Location: /home');
         die();
