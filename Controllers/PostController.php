@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Config\Database;
 use App\Models\Post;
 use App\Models\Comment;
+
+
 class PostController{
 
     public static function get($id){
@@ -33,23 +35,19 @@ class PostController{
     }
 
     public static function createPost($data,$image){
-        $post = new Post();
+        $post = isset($data['id']) ? Post::get(['*'],['id' => $data['id']])[0] : new Post();
         $post->title = $data['title'];
         $post->brief = $data['brief'];
         $post->content = $data['content'];
-        $post->user_id = $_SESSION['user'];
-        if($data['id']){
-            $post->id = $data['id'];
-        }
+        $post->user_id = $_SESSION['user']->id;
         $conn = Database::getConexion();
-        $post->image = mysqli_real_escape_string($conn,file_get_contents($image['image']['tmp_name']));
+        if ($image['image']['size'] != 0){
+            $post->image = mysqli_real_escape_string($conn,base64_encode(file_get_contents($image['image']['tmp_name'])));
+        }
         $conn->close();
         $post->save();
         header('Location: /home');
         die();
-        
-        
-        
     }
 
     public static function createComment($data){

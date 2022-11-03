@@ -17,6 +17,8 @@ use App\Config\Dotenv;
 use App\Controllers\HomeController;
 use App\Controllers\LoginController;
 use App\Controllers\PostController;
+use App\Controllers\UserController;
+
 (new Dotenv('../.env'))->load();
 $routes = [];
 $getParams = [];
@@ -30,6 +32,7 @@ function route($path, $callback)
 route('/',$fn = fn() => HomeController::index());
 route('/index',$fn = fn() => HomeController::index());
 route('/home',$fn = fn() => HomeController::index());
+route('/userform', $fn = fn()=> UserController::userForm());
 route('/comment', $fn = fn() => PostController::createComment($GLOBALS['postParams']));
 route('/login', $fn = fn() => LoginController::index());
 route('/newpost', $fn = fn() => PostController::getPostForm());

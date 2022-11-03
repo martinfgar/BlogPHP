@@ -1,2 +1,2 @@
-<a href="/newpost" style="margin-left: auto;"><img src="images/plus-icon.svg" alt="New Post" title="New Post"></a>
+<a href="/newpost" style="margin-left: 1em;"><img src="images/plus-icon.svg" alt="New Post" title="New Post"></a>
 <a href="/logout" style="margin-left:1em;"><img src="images/logout.svg" alt="Logout" title="Logout"></a>

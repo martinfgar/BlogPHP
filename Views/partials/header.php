@@ -9,12 +9,15 @@
             </h1>
             <!-- logo -->
             <?php 
+                
                 if(isset($_SESSION['user'])){
+                    if ($_SESSION['user']->rol == 1){
+                        include '../Views/partials/header/admin.php';
+                    }
                     if($sameAuthor){
                         include '../Views/partials/header/postAuthor.php';
-                    }else{
-                        include '../Views/partials/header/logged.php';
                     }
+                    include '../Views/partials/header/logged.php';
                     
                 }else{
                   include '../Views/partials/header/visitor.php';

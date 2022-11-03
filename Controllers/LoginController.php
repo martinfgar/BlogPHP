@@ -16,7 +16,9 @@ class LoginController{
             die();
         }
         if (password_verify($params['password'],$users[0]->password)){
-            $_SESSION['user'] = $users[0]->id;
+            $_SESSION['user'] = $users[0];
+            $users[0]->last_login = date('Y-m-d H:i:s',time());
+            $users[0]->save();
             unset($_SESSION['loginError']);
             header('Location: /home');
             die();

@@ -13,7 +13,7 @@
 
             </div>
 
-            <img src='data:image/jpeg;base64,<?php try{echo base64_encode($post->image);}catch(Exception $e){}?>' alt="" class="img-responsive" />
+            <img src='data:image/jpeg;base64,<?php try{echo $post->image;}catch(Exception $e){}?>' alt="" class="img-responsive" />
 
         </figure>
 
