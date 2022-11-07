@@ -13,3 +13,7 @@
 Todos los usuarios de prueba creados por blog.sql tienen de contraseña 'root'.
 
 - Modificar el fichero php.ini para permitir subidas de ficheros mas grandes. Las imagenes se guardan como longblob en la BD.
+
+- En php.ini cambiar los valores de error_reporting y display_errors a los de abajo
+ error_reporting = E_ALL & ~E_NOTICE
+ display_errors = Off.
