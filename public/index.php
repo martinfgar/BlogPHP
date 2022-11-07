@@ -33,6 +33,7 @@ route('/',$fn = fn() => HomeController::index());
 route('/index',$fn = fn() => HomeController::index());
 route('/home',$fn = fn() => HomeController::index());
 route('/userform', $fn = fn()=> UserController::userForm());
+route('/user', $fn = fn() => UserController::createUser($GLOBALS['postParams']));
 route('/comment', $fn = fn() => PostController::createComment($GLOBALS['postParams']));
 route('/login', $fn = fn() => LoginController::index());
 route('/newpost', $fn = fn() => PostController::getPostForm());

@@ -59,6 +59,9 @@ input, textarea {
 	-webkit-border-radius: 0;
 
 }
+input[type="checkbox"]{
+	-webkit-appearance: auto!important;
+}
 
 button, html input[type="button"],/* 1 */ input[type="reset"], input[type="submit"] {
 
