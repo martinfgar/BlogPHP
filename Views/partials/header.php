@@ -1,7 +1,7 @@
 <header role="header" class="container">
         <!-- logo -->
         <div style="display: flex;">
-            <h1>
+            <h1 style="margin-right:auto">
 
                 <a href="/home" title="avana LLC"><img src="images/logo.png" title="avana LLC"
                         alt="avana LLC" /></a>

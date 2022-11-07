@@ -8,9 +8,9 @@ class Usuario extends Model{
     public string $username;
     public string $password;
     public string $email;
-    public string $created_at;
-    public string $last_login;
-    public bool $active;
+    public static string $created_at;
+    public ?string $last_login =  null;
+    public int $active;
     public string $first_name;
     public string $last_name;
     public int $rol;

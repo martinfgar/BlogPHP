@@ -12,7 +12,7 @@ class Post extends Model
     public string $brief;
     public string $content;
     public string $image;
-    public string $created_at;
+    public static string $created_at;
     public bool $status;
     public int $user_id;
 

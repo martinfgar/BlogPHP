@@ -1,1 +1,1 @@
-<a href="/login" style="margin-left: auto;"><img src="images/person.svg" alt=""></a>
+<a href="/login" style="margin-left: 1em;"><img src="images/person.svg" alt=""></a>

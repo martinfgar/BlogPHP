@@ -48,8 +48,7 @@ abstract class Model
         $class = get_called_class();
         $tabla = $class::$tabla;
         $arrayAttr = get_object_vars($this);
-
-        $id = $this->id;
+        $id = $this->id;     
         if ($id) {
             array_walk($arrayAttr, function (&$val, $key) {
                 $val = "{$key}='{$val}'";
@@ -59,10 +58,10 @@ abstract class Model
             $query = "update {$tabla} set {$values} where id={$id}";
         } else {
             $query = "insert into {$tabla} (" . (implode(', ', array_keys($arrayAttr))) . ") values (" . implode(',', array_map(function ($val) {
-                return "'{$val}'";
+                return $val == null ? "NULL" : "'{$val}'";
             }, array_values($arrayAttr))) . ")";
         }
         $stmt = $conn->query($query);
-        $conn->close();
+        $conn->close();     
     }
 }

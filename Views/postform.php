@@ -40,7 +40,7 @@ namespace App\Views;
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <label for="image" class="form-label" >Image</label>
-                        <input type="file" class="form-control" accept="image/png, image/jpeg" name="image" id="image" hidden>
+                        <input type="file" class="form-control" accept="image/png, image/jpeg" name="image" id="image" hidden <?php if(!isset($post)){echo 'required';} ?>>
                     </div>
 
                     <div class="col-12 text-center">

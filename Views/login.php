@@ -31,16 +31,16 @@
 		      		<div class="form-group">
 		      			<input name="username" type="text" class="form-control rounded-left" placeholder="Username" required>
 		      		</div>
-	            <div class="form-group d-flex">
-	              <input name="password" type="password" class="form-control rounded-left" placeholder="Password" required>
-	            </div>
+	            	<div class="form-group d-flex">
+	            	  <input name="password" type="password" class="form-control rounded-left" placeholder="Password" required>
+	            	</div>
 	            	<input type="text" name="item" hidden value="userlogin">
-	            <div class="form-group d-flex text-center">
-					<span style="color:red"> <?php if(isset($_SESSION['loginError'])){echo $_SESSION['loginError'];} ?></span>
-				</div>
-				<div class="form-group">
-	            	<button type="submit" class="btn btn-primary rounded submit p-3 px-5">Login</button>
-	            </div>
+	            	<div class="form-group d-flex text-center">
+						<span style="color:red"> <?php if(isset($_SESSION['loginError'])){echo $_SESSION['loginError'];} ?></span>
+					</div>
+					<div class="form-group">
+	            		<button type="submit" class="btn btn-primary rounded submit p-3 px-5">Login</button>
+	            	</div>
 	          </form>
 	        </div>
 				</div>
