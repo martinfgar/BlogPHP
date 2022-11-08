@@ -44,6 +44,7 @@ route('/edit', $fn= fn() => PostController::getPostEditForm($GLOBALS['getParams'
 route('/logout' ,$fn = fn() => LoginController::logout());
 route('/editUser', $fn = fn() => UserController::editForm());
 route('/updateUser',$fn = fn() => UserController::editUser($GLOBALS['postParams']));
+route('/adminPanel',$fn = fn() => HomeController::adminPanel());
 function run()
 {   
     

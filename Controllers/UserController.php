@@ -10,6 +10,7 @@ class UserController{
     public static function editForm(){
         require '../Views/updateuserform.php';
     }
+    
 
     public static function editUser($data){
         if (!password_verify($data['current_password'],$_SESSION['user']->password)){
@@ -25,6 +26,7 @@ class UserController{
         header('Location: /home');
         die();
     }
+   
 
     public static function createUser($data){
         
