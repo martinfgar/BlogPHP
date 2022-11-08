@@ -11,6 +11,20 @@ class UserController{
         require '../Views/updateuserform.php';
     }
 
+    public static function editUser($data){
+        if (!password_verify($data['current_password'],$_SESSION['user']->password)){
+            $_SESSION['updateUserError'] = 'Incorrect current password';
+            require '../Views/updateuserform.php';
+            return;
+        }
+        $_SESSION['user']->first_name = $data['first_name'];
+        $_SESSION['user']->last_name = $data['last_name'];
+        $_SESSION['user']->password = password_hash($data['password'], PASSWORD_DEFAULT);
+        $_SESSION['user']->save();
+        header('Location: /home');
+        die();
+    }
+    
     public static function createUser($data){
         
         if(count(Usuario::get(['*'],['username' => $data['username']]))>0){
