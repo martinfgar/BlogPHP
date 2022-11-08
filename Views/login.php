@@ -37,6 +37,7 @@
 	            	<input type="text" name="item" hidden value="userlogin">
 	            	<div class="form-group d-flex text-center">
 						<span style="color:red"> <?php if(isset($_SESSION['loginError'])){echo $_SESSION['loginError'];} ?></span>
+						<?php unset($_SESSION['loginError']); ?>
 					</div>
 					<div class="form-group">
 	            		<button type="submit" class="btn btn-primary rounded submit p-3 px-5">Login</button>

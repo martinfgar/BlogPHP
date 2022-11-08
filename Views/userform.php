@@ -46,6 +46,7 @@
                     </div>
                     <div>
                         <small id="newUserError" style="color:red"><?php if(isset($_SESSION['newUserError'])){echo $_SESSION['newUserError'];} ?></small>
+                        <?php unset($_SESSION['newUserError']); ?> 
                     </div>
                     <button type="submit" class="btn btn-danger">Create User</button>
                 </form>

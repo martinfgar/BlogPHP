@@ -21,10 +21,11 @@ class UserController{
         $_SESSION['user']->last_name = $data['last_name'];
         $_SESSION['user']->password = password_hash($data['password'], PASSWORD_DEFAULT);
         $_SESSION['user']->save();
+        unset($_SESSION['updateUserError']);
         header('Location: /home');
         die();
     }
-    
+
     public static function createUser($data){
         
         if(count(Usuario::get(['*'],['username' => $data['username']]))>0){
