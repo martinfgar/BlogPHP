@@ -26,6 +26,7 @@
                         <input type="password" class="form-control" name="current_password" id="current_password" aria-describedby="usernameHelp" required>
                         <small> <b>Default password "root"</b> </small><br>
                         <small id="updateUserError" style="color:red"><?php if(isset($_SESSION['updateUserError'])){echo $_SESSION['updateUserError'];} ?></small>
+                        <?php unset($_SESSION['updateUserError']);?>
                     </div>
                     <div class="form-group">
                         <label for="password">New password</label>
