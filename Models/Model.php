@@ -64,4 +64,19 @@ abstract class Model
         $stmt = $conn->query($query);
         $conn->close();     
     }
+
+
+    /**
+     * Elimina el objeto desde el que se llama. 
+     * Elimina todas las referencias de las tablas.
+     */
+    public function delete()
+    {
+        $conn = Database::getConexion();
+        $class = get_called_class();
+        $tabla = $class::$tabla;
+        $id = $this->id;
+        $stmt = $conn->query("delete from {$tabla} where id={$id}");
+        $conn->close();
+    }
 }
