@@ -42,6 +42,7 @@ route('/userlogin', $fn = fn() => LoginController::checkUser($GLOBALS['postParam
 route('/post', $fn = fn() => PostController::createPost($GLOBALS['postParams'], $GLOBALS['files']));
 route('/edit', $fn= fn() => PostController::getPostEditForm($GLOBALS['getParams']['id']));
 route('/logout' ,$fn = fn() => LoginController::logout());
+route('/editUser', $fn = fn() => UserController::editForm());
 function run()
 {   
     

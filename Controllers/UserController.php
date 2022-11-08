@@ -7,6 +7,10 @@ class UserController{
         require '../Views/userform.php';
     }
 
+    public static function editForm(){
+        require '../Views/updateuserform.php';
+    }
+
     public static function createUser($data){
         
         if(count(Usuario::get(['*'],['username' => $data['username']]))>0){
