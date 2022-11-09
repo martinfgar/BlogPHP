@@ -49,10 +49,16 @@ class UserController{
         $usr->password = password_hash('root', PASSWORD_DEFAULT);
         $usr->last_name = $data['last_name'];
         
-        $usr->rol    = isset($data['rol']) ? 1 : 0;
-        $usr->active = isset($data['active']) ? 1: 0;
+        $usr->rol    = isset($data['rol']) ;
+        $usr->active = isset($data['active']);
         $usr->save();
         header('Location: /home');
         die();
     }
+    public static function deleteUser($data){
+        Usuario::get(['*'],['id' => $data['id']])[0]->delete();
+        header('Location: /adminPanel');
+        die();
+    }
+
 }

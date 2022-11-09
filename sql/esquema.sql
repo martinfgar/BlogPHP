@@ -23,7 +23,7 @@ create table post(
 	created_at datetime DEFAULT CURRENT_TIMESTAMP,
 	status int default 1,
     user_id int,
-	foreign key (user_id) references user(id)
+	foreign key (user_id) references user(id) on delete cascade
 );
 
 create table comment(
@@ -35,4 +35,7 @@ create table comment(
     post_id int,
 	foreign key (post_id) references post(id)
 );
+
+INSERT INTO `user` (`id`, `username`, `password`, `email`, `created_at`, `last_login`, `active`, `first_name`, `last_name`, `rol`) VALUES
+(1, 'cackerley0', '$2y$10$3OnxFp310raIZS1bcm.xxegUm1c50Be6F2hhXXiFk8KyZ1.0D91im', 'cackerley0@youku.com', '2022-04-22 21:16:41', '2022-02-09 02:12:02', 1, 'Cecilio', 'Ackerley', 1);
 

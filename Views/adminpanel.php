@@ -22,6 +22,8 @@
                     <th class="header" scope="col">Created at</th>
                     <th class="header" scope="col">Rol</th>
                     <th class="header" scope="col">Posts</th>
+                    <th class="header" scope="col"></th>
+                    <th class="header" scope="col"></th>
 
                 </tr>
 
@@ -38,7 +40,9 @@
                         . "<td>" . $usuario->created_at . "</td>"
                         . "<td>" . ($usuario->rol ?'Admin':'Usuario normal') . "</td>"
                         . "<td>" . count($usuario->posts()) . "</td>"
-                        . "</tr>";
+                    . "<td> <a href='/deleteuser?id={$usuario->id}'><img src='images/delete.svg' alt='Delete User' title='Delete user'></a>
+                        </tr>";
+
                 }
                 ?>
             </tbody>

@@ -45,6 +45,7 @@ route('/logout' ,$fn = fn() => LoginController::logout());
 route('/editUser', $fn = fn() => UserController::editForm());
 route('/updateUser',$fn = fn() => UserController::editUser($GLOBALS['postParams']));
 route('/adminPanel',$fn = fn() => HomeController::adminPanel());
+route('/deleteuser',$fn = fn() => UserController::deleteUser($GLOBALS['getParams']));
 function run()
 {   
     
