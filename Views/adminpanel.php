@@ -33,18 +33,19 @@
                 foreach ($usuarios as $usuario) {
 
                     echo "<tr>
-                        <td>" . $usuario->first_name . "</td>"
-                        . "<td>" . $usuario->last_name. "</td>"
-                        . "<td>" . $usuario->username. "</td>"
-                        . "<td>" . $usuario->email . "</td>"
+                        <td> <input type='text' value='" . $usuario->first_name . "'></input></td>"
+                        . "<td> <input type='text' value='" . $usuario->last_name . "'></input></td>"
+                        . "<td><input type='text' value='" . $usuario->username . "'></input></td>"
+                        . "<td><input type='text' value='" . $usuario->email . "'></input></td>"
                         . "<td>" . $usuario->created_at . "</td>"
-                        . "<td>" . ($usuario->rol ?'Admin':'Usuario normal') . "</td>"
+                        . "<td>" . ($usuario->rol ? 'Admin' : 'Usuario normal') . "</td>"
                         . "<td>" . count($usuario->posts()) . "</td>"
-                    . "<td> <a href='/deleteuser?id={$usuario->id}'><img src='images/delete.svg' alt='Delete User' title='Delete user'></a>
+                        . "<td> <a href='/deleteuser?id={$usuario->id}'><img src='images/delete.svg' alt='Delete User' title='Delete user'></a>"
+                        . "<td> <a href='/deleteuser?id={$usuario->id}'><img src='images/check.svg' alt='Save User' title='Save user'></a>
                         </tr>";
-
                 }
                 ?>
+
             </tbody>
         </table>
     </main>
