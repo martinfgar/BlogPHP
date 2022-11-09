@@ -58,7 +58,7 @@ abstract class Model
             $query = "update {$tabla} set {$values} where id={$id}";
         } else {
             $query = "insert into {$tabla} (" . (implode(', ', array_keys($arrayAttr))) . ") values (" . implode(',', array_map(function ($val) {
-                return $val == null ? "NULL" : "'{$val}'";
+                return $val === null ? "NULL" : "'{$val}'";
             }, array_values($arrayAttr))) . ")";
         }
         $stmt = $conn->query($query);

@@ -12,6 +12,10 @@ class HomeController{
     }
 
     public static function adminPanel(){
+        if(!isset($_SESSION['user']) || $_SESSION['user']->rol == 0){
+            header('Location: /forbidden');
+            die();
+        }
         $usuarios= Usuario::get();
         require '../Views/adminpanel.php';
     }

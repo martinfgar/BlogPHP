@@ -4,15 +4,27 @@ use App\Models\Usuario;
 class UserController{
     
     public static function userForm(){
+        if(!isset($_SESSION['user']) || $_SESSION['user']->rol == 0){
+            header('Location: /forbidden');
+            die();
+        }
         require '../Views/userform.php';
     }
 
     public static function editForm(){
+        if(!isset($_SESSION['user'])){
+            header('Location: /forbidden');
+            die();
+        }
         require '../Views/updateuserform.php';
     }
     
 
     public static function editUser($data){
+        if(!isset($_SESSION['user'])){
+            header('Location: /forbidden');
+            die();
+        }
         if (!password_verify($data['current_password'],$_SESSION['user']->password)){
             $_SESSION['updateUserError'] = 'Incorrect current password';
             require '../Views/updateuserform.php';
@@ -29,7 +41,10 @@ class UserController{
    
 
     public static function createUser($data){
-        
+        if(!isset($_SESSION['user']) || $_SESSION['user']->rol == 0){
+            header('Location: /forbidden');
+            die();
+        }
         if(count(Usuario::get(['*'],['username' => $data['username']]))>0){
             $_SESSION['newUserError'] = 'Username already in use.';
             require '../Views/userform.php';
@@ -55,7 +70,12 @@ class UserController{
         header('Location: /home');
         die();
     }
+
     public static function deleteUser($data){
+        if(!isset($_SESSION['user']) || $_SESSION['user']->rol == 0){
+            header('Location: /forbidden');
+            die();
+        }
         Usuario::get(['*'],['id' => $data['id']])[0]->delete();
         header('Location: /adminPanel');
         die();

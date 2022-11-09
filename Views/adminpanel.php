@@ -4,7 +4,7 @@
 <head>
     <?php include '../Views/partials/head.php' ?>
     <title>All users</title>
-    <link rel="stylesheet" href="stylePanel.css">
+    <link rel="stylesheet" href="css/stylePanel.css">
 </head>
 
 <body>

@@ -35,6 +35,10 @@ class PostController{
     }
 
     public static function createPost($data,$image){
+        if(!isset($_SESSION['user'])){
+            header('Location: /forbidden');
+            die();
+        }
         $post = isset($data['id']) ? Post::get(['*'],['id' => $data['id']])[0] : new Post();
         $post->title = $data['title'];
         $post->brief = $data['brief'];
