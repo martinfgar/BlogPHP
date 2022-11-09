@@ -41,7 +41,7 @@
                         . "<td>" . ($usuario->rol ? 'Admin' : 'Usuario normal') . "</td>"
                         . "<td>" . count($usuario->posts()) . "</td>"
                         . "<td> <a href='/deleteuser?id={$usuario->id}'><img src='images/delete.svg' alt='Delete User' title='Delete user'></a>"
-                        . "<td> <a href='/deleteuser?id={$usuario->id}'><img src='images/check.svg' alt='Save User' title='Save user'></a>
+                        . "<td> <a href='/edituseradmin'><img src='images/check.svg' alt='Save User' title='Save user'></a>
                         </tr>";
                 }
                 ?>

@@ -38,6 +38,22 @@ class UserController{
         header('Location: /home');
         die();
     }
+    public static function editUserAdmin($data){
+        if(!isset($_SESSION['user']) || $_SESSION['user']->rol == 0){
+            header('Location: /forbidden');
+            die();
+        }
+        
+        $_SESSION['user']->first_name = $data['first_name'];
+        $_SESSION['user']->last_name = $data['last_name'];
+        $_SESSION['user']->email = $data['email'];
+        $_SESSION['user']->username = $data['username'];
+        $_SESSION['user']->rol = $data['rol'];
+        $_SESSION['user']->save();
+        unset($_SESSION['updateUserError']);
+        header('Location: /home');
+        die();
+    }
    
 
     public static function createUser($data){
