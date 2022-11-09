@@ -16,6 +16,7 @@ class HomeController{
             header('Location: /forbidden');
             die();
         }
+        $posts = Post::get();
         $usuarios= Usuario::get();
         require '../Views/adminpanel.php';
     }

@@ -65,4 +65,13 @@ class PostController{
         die();
     }
 
+    public static function deletePost($data){
+        if(!isset($_SESSION['user']) || $_SESSION['user']->rol == 0){
+            header('Location: /forbidden');
+            die();
+        }
+        Post::get(['*'],['id' => $data['id']])[0]->delete();
+        header('Location: /adminPanel');
+        die();
+    }
 }

@@ -46,7 +46,9 @@ route('/editUser', $fn = fn() => UserController::editForm());
 route('/updateUser',$fn = fn() => UserController::editUser($GLOBALS['postParams']));
 route('/adminPanel',$fn = fn() => HomeController::adminPanel());
 route('/deleteuser',$fn = fn() => UserController::deleteUser($GLOBALS['getParams']));
-route('/edituseradmin',$fn = fn() => UserController::editUserAdmin($GLOBALS['postsParams']));
+route('/deletepost',$fn = fn() => PostController::deletePost($GLOBALS['getParams']));
+
+route('/edituseradmin',$fn = fn() => UserController::editUserAdmin($GLOBALS['postParams']));
 route('/forbidden', $fn = fn() => require('../Views/401.php'));
 function run()
 {   

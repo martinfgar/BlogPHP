@@ -43,15 +43,14 @@ class UserController{
             header('Location: /forbidden');
             die();
         }
-        
-        $_SESSION['user']->first_name = $data['first_name'];
-        $_SESSION['user']->last_name = $data['last_name'];
-        $_SESSION['user']->email = $data['email'];
-        $_SESSION['user']->username = $data['username'];
-        $_SESSION['user']->rol = $data['rol'];
-        $_SESSION['user']->save();
-        unset($_SESSION['updateUserError']);
-        header('Location: /home');
+        $usr = Usuario::get(['*'],['id'=> $data['id']])[0];
+        $usr->first_name = $data['first_name'];
+        $usr->last_name = $data['last_name'];
+        $usr->email = $data['email'];
+        $usr->username = $data['username'];
+        $usr->rol = $data['rol'];
+        $usr->save();
+        header('Location: /adminPanel');
         die();
     }
    

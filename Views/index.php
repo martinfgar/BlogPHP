@@ -23,21 +23,21 @@
 
                     <header>
 
-                        <h2><span>News</span> Updates from studio</h2>
+                        <h2><span>Blog</span> Posts from our editors</h2>
 
                     </header>
 
-                    <p>Get all information about our studio from latest news posts & updates page.</p>
+                    <p>Get all the latest information from our bloggers.</p>
 
                 </article>
 
                 <ul class="grid-lod effect-2" id="grid">
 
                    <?php 
-                    for ($i=0;$i<count($posts)/2;$i++){
-                        $post = $posts[$i];
-                        require '../Views/partials/postCard.php';
-                    }
+                        for ($i=1;$i<count($posts);$i = $i+2){
+                            $post = $posts[$i];
+                            require '../Views/partials/postCard.php';
+                        }
                     
                    ?>
                 </ul>
@@ -48,7 +48,8 @@
                 <ul class="grid-lod effect-2" id="grid">
 
                 <?php 
-                    for ($i=count($posts)/2;$i<count($posts);$i++){
+
+                    for ($i=0;$i<count($posts);$i = $i+2){
                         $post = $posts[$i];
                         require '../Views/partials/postCard.php';
                     }

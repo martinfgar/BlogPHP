@@ -12,14 +12,7 @@
 
 <ul role="social-icons">
 
-<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-
-<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-
-<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-
-<li><a href="#"><i class="fa fa-flickr" aria-hidden="true"></i></a></li>
-
+<li><a href="https://github.com/martinfgar/BlogPHP.git" target="_blank"><i class="fa fa-github"></i></i></a></li>
 </ul>
 
-<p class="copy-right">&copy; 2015 avana LLC.. All rights Resved</p>
+<p class="copy-right">&copy; 2022 George & Martin. All rights Reserved</p>

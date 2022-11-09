@@ -10,7 +10,7 @@ create table user(
     active int default 1,
     first_name varchar(20),
     last_name varchar(20),
-    rol int
+    rol int default 0
     /*en rol 0=edito, 1=admin*/
 );
 
@@ -37,5 +37,5 @@ create table comment(
 );
 
 INSERT INTO `user` (`id`, `username`, `password`, `email`, `created_at`, `last_login`, `active`, `first_name`, `last_name`, `rol`) VALUES
-(1, 'cackerley0', '$2y$10$3OnxFp310raIZS1bcm.xxegUm1c50Be6F2hhXXiFk8KyZ1.0D91im', 'cackerley0@youku.com', '2022-04-22 21:16:41', '2022-02-09 02:12:02', 1, 'Cecilio', 'Ackerley', 1);
+(1, 'admin', '$2y$10$3OnxFp310raIZS1bcm.xxegUm1c50Be6F2hhXXiFk8KyZ1.0D91im', 'admin@root.com', '2022-04-22 21:16:41', '2022-02-09 02:12:02', 1, 'admin', 'admin', 1);
 
