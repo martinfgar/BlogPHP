@@ -33,7 +33,7 @@ create table comment(
 	created_at datetime DEFAULT CURRENT_TIMESTAMP,
 	status int default 1,
     post_id int,
-	foreign key (post_id) references post(id)
+	foreign key (post_id) references post(id) on delete cascade
 );
 
 INSERT INTO `user` (`id`, `username`, `password`, `email`, `created_at`, `last_login`, `active`, `first_name`, `last_name`, `rol`) VALUES
