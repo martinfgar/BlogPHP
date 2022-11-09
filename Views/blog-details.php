@@ -37,9 +37,9 @@
                     </h3>
                     <h4>Author: <?php echo "{$author->first_name} {$author->last_name}" ?></h4>
                     <h2> <?php echo $post->title ?></h2>
-
+                    <h5><?php echo $post->brief ?></h5>
                 </header>
-
+                
 
 
                 <figure>
