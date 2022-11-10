@@ -57,11 +57,30 @@ class PostController{
     public static function createComment($data){
         $comentario = new Comment();
         $comentario->post_id = $data['post_id'];
-        $comentario->name = $data['name'];
+        $comentario->user_id = $_SESSION['user']->id;
         $comentario->comment = $data['comment'];
         $comentario->status = 1;
         $comentario->save();
         header("Location: /blog?id={$data['post_id']}");
+        die();
+    }
+
+    public static function editComment($data){
+        $comentario = Comment::get(['*'],['id' => $data['id']])[0];
+        $comentario->comment = $data['comment'];
+        $comentario->save();
+        header("Location: /blog?id={$comentario->post_id}");
+        die();
+    }
+
+    public static function deleteComment($data){
+        $comentario = Comment::get(['*'],['id' => $data['id']])[0];
+        if ($_SESSION['user']->id != $comentario->author()->id && $_SESSION['user']->id != $comentario->post()->author()->id){
+            header('Location: /forbidden');
+            die();
+        }
+        $comentario->delete();
+        header("Location: /blog?id={$comentario->post_id}");
         die();
     }
 

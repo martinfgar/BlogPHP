@@ -35,6 +35,8 @@ route('/home',$fn = fn() => HomeController::index());
 route('/userform', $fn = fn()=> UserController::userForm());
 route('/user', $fn = fn() => UserController::createUser($GLOBALS['postParams']));
 route('/comment', $fn = fn() => PostController::createComment($GLOBALS['postParams']));
+route('/commentedit', $fn = fn() => PostController::editComment($GLOBALS['postParams']));
+route('/deletecomment',$fn = fn() => PostController::deleteComment($GLOBALS['getParams']));
 route('/login', $fn = fn() => LoginController::index());
 route('/newpost', $fn = fn() => PostController::getPostForm());
 route('/blog', $fn= fn() =>PostController::get($GLOBALS['getParams']['id']));
@@ -47,7 +49,6 @@ route('/updateUser',$fn = fn() => UserController::editUser($GLOBALS['postParams'
 route('/adminPanel',$fn = fn() => HomeController::adminPanel());
 route('/deleteuser',$fn = fn() => UserController::deleteUser($GLOBALS['getParams']));
 route('/deletepost',$fn = fn() => PostController::deletePost($GLOBALS['getParams']));
-
 route('/edituseradmin',$fn = fn() => UserController::editUserAdmin($GLOBALS['postParams']));
 route('/forbidden', $fn = fn() => require('../Views/401.php'));
 function run()

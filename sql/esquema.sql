@@ -28,12 +28,13 @@ create table post(
 
 create table comment(
 	id int not null auto_increment primary key,
-	name varchar(255),
 	comment text,
 	created_at datetime DEFAULT CURRENT_TIMESTAMP,
 	status int default 1,
     post_id int,
-	foreign key (post_id) references post(id) on delete cascade
+	user_id int,
+	foreign key (post_id) references post(id) on delete cascade,
+	FOREIGN KEY (user_id) REFERENCES user(id) on delete cascade
 );
 
 INSERT INTO `user` (`id`, `username`, `password`, `email`, `created_at`, `last_login`, `active`, `first_name`, `last_name`, `rol`) VALUES

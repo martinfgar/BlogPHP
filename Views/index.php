@@ -38,7 +38,6 @@
                             $post = $posts[$i];
                             require '../Views/partials/postCard.php';
                         }
-                    
                    ?>
                 </ul>
             </div>
