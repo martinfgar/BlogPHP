@@ -28,6 +28,7 @@
                     <th class="header" scope="col">Email</th>
                     <th class="header" scope="col">Created at</th>
                     <th class="header" scope="col">Rol</th>
+                    <th class="header" scope="col">Active</th>
                     <th class="header" scope="col">Posts</th>
                     <th class="header" scope="col"></th>
                     <th class="header" scope="col"></th>
@@ -49,6 +50,10 @@
                         <td><select name='rol'>
                         <option value='1'" . ($usuario->rol ? "selected" : "") . ">Admin</option>
                         <option value='0'" . ($usuario->rol ? '' : 'selected') . ">Editor</option>
+                        </select>
+                        <td><select name='active'>
+                        <option value='1'" . ($usuario->active ? "selected" : "") . ">Yes</option>
+                        <option value='0'" . ($usuario->active ? '' : 'selected') . ">No</option>
                         </select>
                         <td>" . count($usuario->posts()) . "</td>
                         <td> <a href='/deleteuser?id={$usuario->id}'><img src='images/delete.svg' alt='Delete User' title='Delete user'></a>

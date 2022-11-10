@@ -15,6 +15,11 @@ class LoginController{
             header('Location: /login');
             die();
         }
+        if (!$users[0]->active){
+            $_SESSION['loginError'] = 'Your user is inactive. Please contact an admin.';
+            header('Location: /login');
+            die();
+        }
         if (password_verify($params['password'],$users[0]->password)){
             $_SESSION['user'] = $users[0];
             $users[0]->last_login = date('Y-m-d H:i:s',time());

@@ -49,6 +49,7 @@ class UserController{
         $usr->email = $data['email'];
         $usr->username = $data['username'];
         $usr->rol = $data['rol'];
+        $usr->active = $data['active'];
         $usr->save();
         header('Location: /adminPanel');
         die();
@@ -90,8 +91,13 @@ class UserController{
         if(!isset($_SESSION['user']) || $_SESSION['user']->rol == 0){
             header('Location: /forbidden');
             die();
-        }
+        } 
         Usuario::get(['*'],['id' => $data['id']])[0]->delete();
+        if ($_SESSION['user']->id == $data['id']){
+            unset($_SESSION['user']);
+            header('Location: /home');
+            die();
+        }
         header('Location: /adminPanel');
         die();
     }
