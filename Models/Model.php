@@ -49,19 +49,14 @@ abstract class Model
         $tabla = $class::$tabla;
         $arrayAttr = get_object_vars($this);
         unset($arrayAttr['created_at']);
+        $fillable = array_fill(0, count($arrayAttr), '?');
         $id = $this->id;     
-        if ($id) {
-            array_walk($arrayAttr, function (&$val, $key) {
-                $val = ($val === null) ? "{$key}=NULL" : "{$key}='{$val}'";
-            });
-            $values = implode(', ', $arrayAttr);
-            $query = "update {$tabla} set {$values} where id={$id}";
-        } else {
-            $query = "insert into {$tabla} (" . (implode(', ', array_keys($arrayAttr))) . ") values (" . implode(',', array_map(function ($val) {
-                return $val === null ? "NULL" : "'{$val}'";
-            }, array_values($arrayAttr))) . ")";
-        }
-        $stmt = $conn->query($query);
+        $query = ($id) ? 
+            "update {$tabla} set ".implode('=?,',array_keys($arrayAttr))."=? where id={$id}"
+            :
+            "insert into {$tabla} (" . (implode(', ', array_keys($arrayAttr))) . ") values (" .implode(',',$fillable). ")";
+        $stmt = $conn->prepare($query);
+        $stmt->execute(array_values($arrayAttr));
         $conn->close();     
     }
 
