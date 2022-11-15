@@ -48,11 +48,11 @@ abstract class Model
         $class = get_called_class();
         $tabla = $class::$tabla;
         $arrayAttr = get_object_vars($this);
+        unset($arrayAttr['created_at']);
         $id = $this->id;     
         if ($id) {
             array_walk($arrayAttr, function (&$val, $key) {
-                $val = "{$key}='{$val}'";
-                
+                $val = ($val === null) ? "{$key}=NULL" : "{$key}='{$val}'";
             });
             $values = implode(', ', $arrayAttr);
             $query = "update {$tabla} set {$values} where id={$id}";

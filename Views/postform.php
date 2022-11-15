@@ -20,7 +20,7 @@ namespace App\Views;
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 commentys-form">
 
-                <form action="index.php" method="POST"  enctype="multipart/form-data">
+                <form action="/post" method="POST"  enctype="multipart/form-data">
                     <div class="clearfix"></div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <label for="title">Title</label>
@@ -44,7 +44,6 @@ namespace App\Views;
                     </div>
 
                     <div class="col-12 text-center">
-                        <input id="item" name="item" value="post" hidden>
                         <button class="btn btn-danger form-control" type="submit">Publish Post</button>
                     </div>
 

@@ -23,9 +23,8 @@
         
         <?php 
             if(isset($_SESSION['user']) && $_SESSION['user']->id == $comment->user_id){
-                echo "<form style='display:flex' action='index.php' method='POST'>
+                echo "<form style='display:flex' action='/comment-edit' method='POST'>
                 <input type='text' value='{$comment->comment}' name='comment' style='margin-right:auto;width:80%'>
-                <input type='text' name='item' value='commentedit' hidden>
                 <input type='number' name='id' value='{$comment->id}' hidden>
                 <button class='btn' style='padding:0;' type=submit><img src='images/check.svg' alt='Update Comment' title='Update comment'></button>
                 </form>"

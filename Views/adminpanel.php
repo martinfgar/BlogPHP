@@ -39,8 +39,7 @@
             <tbody>
                 <?php
                 foreach ($usuarios as $usuario) {
-                    echo "<tr><form action='index.php' method='POST'>
-                        <input type='text' name='item' value='edituseradmin' hidden>
+                    echo "<tr><form action='/edituser-admin' method='POST'>
                         <input type='number' name='id' value='{$usuario->id}' hidden>
                         <td> <input type='text' name='first_name' value='{$usuario->first_name}'></input></td>
                         <td> <input type='text' name='last_name' value='{$usuario->last_name}'></input></td>

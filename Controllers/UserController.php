@@ -39,6 +39,7 @@ class UserController{
         die();
     }
     public static function editUserAdmin($data){
+       
         if(!isset($_SESSION['user']) || $_SESSION['user']->rol == 0){
             header('Location: /forbidden');
             die();

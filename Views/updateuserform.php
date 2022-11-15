@@ -11,7 +11,7 @@
     <main role="main-inner-wrapper" class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <form action="index.php" method="POST">
+                <form action="/updateUser" method="POST">
                  
                     <div class="form-group">
                         <label for="first_name">First name</label>

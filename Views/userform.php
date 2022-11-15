@@ -11,7 +11,7 @@
     <main role="main-inner-wrapper" class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <form action="index.php" method="POST">
+                <form action="/user" method="POST">
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" class="form-control" name="username" id="username" aria-describedby="usernameHelp" required>
@@ -40,7 +40,6 @@
                             Active
                         </label>
                     </div>
-                    <input type="text" id="item" name="item" value="user" hidden>
                     <div>
                         <small id="emailHelp" class="form-text text-muted">Changing the default "root" password is advised</small>
                     </div>

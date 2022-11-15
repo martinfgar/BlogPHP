@@ -21,9 +21,7 @@ use App\Controllers\UserController;
 
 (new Dotenv('../.env'))->load();
 $routes = [];
-$getParams = [];
-$postParams = $_POST;
-$files = $_FILES;
+
 function route($path, $callback)
 {
     global $routes;
@@ -33,39 +31,30 @@ route('/',$fn = fn() => HomeController::index());
 route('/index',$fn = fn() => HomeController::index());
 route('/home',$fn = fn() => HomeController::index());
 route('/userform', $fn = fn()=> UserController::userForm());
-route('/user', $fn = fn() => UserController::createUser($GLOBALS['postParams']));
-route('/comment', $fn = fn() => PostController::createComment($GLOBALS['postParams']));
-route('/commentedit', $fn = fn() => PostController::editComment($GLOBALS['postParams']));
-route('/deletecomment',$fn = fn() => PostController::deleteComment($GLOBALS['getParams']));
+route('/user', $fn = fn() => UserController::createUser($_POST));
+route('/comment', $fn = fn() => PostController::createComment($_POST));
+route('/comment-edit', $fn = fn() => PostController::editComment($_POST));
+route('/deletecomment',$fn = fn() => PostController::deleteComment($_GET));
 route('/login', $fn = fn() => LoginController::index());
 route('/newpost', $fn = fn() => PostController::getPostForm());
-route('/blog', $fn= fn() =>PostController::get($GLOBALS['getParams']['id']));
-route('/userlogin', $fn = fn() => LoginController::checkUser($GLOBALS['postParams']));
-route('/post', $fn = fn() => PostController::createPost($GLOBALS['postParams'], $GLOBALS['files']));
-route('/edit', $fn= fn() => PostController::getPostEditForm($GLOBALS['getParams']['id']));
+route('/blog', $fn= fn() =>PostController::get($_GET['id']));
+route('/userlogin', $fn = fn() => LoginController::checkUser($_POST));
+route('/post', $fn = fn() => PostController::createPost($_POST, $_FILES));
+route('/edit', $fn= fn() => PostController::getPostEditForm($_GET['id']));
 route('/logout' ,$fn = fn() => LoginController::logout());
 route('/editUser', $fn = fn() => UserController::editForm());
-route('/updateUser',$fn = fn() => UserController::editUser($GLOBALS['postParams']));
+route('/updateUser',$fn = fn() => UserController::editUser($_POST));
 route('/adminPanel',$fn = fn() => HomeController::adminPanel());
-route('/deleteuser',$fn = fn() => UserController::deleteUser($GLOBALS['getParams']));
-route('/deletepost',$fn = fn() => PostController::deletePost($GLOBALS['getParams']));
-route('/edituseradmin',$fn = fn() => UserController::editUserAdmin($GLOBALS['postParams']));
+route('/deleteuser',$fn = fn() => UserController::deleteUser($_GET));
+route('/deletepost',$fn = fn() => PostController::deletePost($_GET));
+route('/edituser-admin',$fn = fn() => UserController::editUserAdmin($_POST));
 route('/forbidden', $fn = fn() => require('../Views/401.php'));
 function run()
 {   
-    
     global $routes;
     $uri = $_SERVER['REQUEST_URI'] ?? '/';
-    $params = explode('?',$uri);
-    $uri =  array_shift($params);
-    if (count($params)>0){
-        foreach($params as $param){
-            $GLOBALS['getParams'][explode('=',$param)[0]] = explode('=',$param)[1];
-        }
-    }
-    if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-        $uri = '/'.$_POST['item'];
-    }
+    $uri =  array_shift(explode('?',$uri));
+    
     foreach ($routes as $path => $callback){
         if ($path !== $uri) continue;
 
